@@ -1,0 +1,310 @@
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Alarabiya custom font */
+@font-face {
+  font-family: 'Alarabiya';
+  src: url('./assets/fonts/Alarabiya-Font.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+/* DG Ghayaty Regular */
+@font-face {
+  font-family: 'DG Ghayaty';
+  src: url('./assets/fonts/DG-Ghayaty-Regular-F.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@layer utilities {
+  .font-ghayaty { font-family: 'DG Ghayaty', 'Tajawal', 'Alarabiya', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif; }
+}
+
+/* DG Ghayaty Regular */
+@font-face {
+  font-family: 'DG Ghayaty';
+  src: url('./assets/fonts/DG-Ghayaty-Regular-F.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+
+
+
+@layer utilities {
+  .font-alarabiya {
+    font-family: 'Alarabiya', -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  }
+  /* حركة دخول بسيطة وخفيفة */
+  .enter-fade-up {
+    opacity: 0;
+    transform: translateY(18px) scale(0.985);
+    will-change: opacity, transform;
+    transition: opacity 500ms ease-out, transform 500ms ease-out;
+  }
+  .enter-fade-up.is-visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+
+
+
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+        "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+        "Helvetica Neue", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+        monospace;
+}
+
+
+
+
+
+@layer base {
+
+
+  :root {
+        --background: 35 15% 99%; /* Slightly lighter */
+
+
+        --foreground: 0 0% 18%; /* #2F2F2F */
+        --card: 0 0% 100%;
+        --card-foreground: 0 0% 18%;
+        --popover: 0 0% 100%;
+
+
+        --popover-foreground: 0 0% 18%;
+        --primary: 45 54% 61%; /* Brand Yellow #D6B661 */
+        --primary-foreground: 0 0% 98%;
+        --secondary: 0 0% 96.1%;
+        --secondary-foreground: 0 0% 18%;
+        --muted: 35 15% 96%;
+        --muted-foreground: 0 0% 43%; /* #6E6E6E */
+        --accent: 35 15% 96%;
+        --accent-foreground: 0 0% 18%;
+        --destructive: 0 84.2% 60.2%;
+        --destructive-foreground: 0 0% 98%;
+        --border: 0 0% 89.8%;
+        --input: 0 0% 89.8%;
+        --ring: 45 54% 61%;
+        --chart-1: 45 54% 61%; /* Brand Yellow */
+        --chart-2: 35 77% 51%; /* Brand Orange */
+        --chart-3: 0 0% 43%; /* Brand Gray */
+        --chart-4: 25 95% 53%; /* Brand Orange Light */
+        --chart-5: 14 91% 64%; /* Brand Orange Dark */
+        --radius: 0.5rem;
+    }
+  .dark {
+        --background: 0 0% 3.9%;
+        --foreground: 0 0% 98%;
+        --card: 0 0% 3.9%;
+        --card-foreground: 0 0% 98%;
+        --popover: 0 0% 3.9%;
+        --popover-foreground: 0 0% 98%;
+        --primary: 0 0% 98%;
+        --primary-foreground: 0 0% 9%;
+        --secondary: 0 0% 14.9%;
+        --secondary-foreground: 0 0% 98%;
+        --muted: 0 0% 14.9%;
+        --muted-foreground: 0 0% 63.9%;
+        --accent: 0 0% 14.9%;
+        --accent-foreground: 0 0% 98%;
+        --destructive: 0 62.8% 30.6%;
+        --destructive-foreground: 0 0% 98%;
+        --border: 0 0% 14.9%;
+        --input: 0 0% 14.9%;
+        --ring: 0 0% 83.1%;
+        --chart-1: 220 70% 50%;
+        --chart-2: 160 60% 45%;
+        --chart-3: 30 80% 55%;
+        --chart-4: 280 65% 60%;
+        --chart-5: 340 75% 55%;
+    }
+}
+
+
+
+@layer base {
+  * {
+    @apply border-border;
+    }
+  body {
+    @apply bg-background text-foreground;
+    }
+}
+
+/* Force mobile-only font size for hero title badge without horizontal stretch */
+@media (max-width: 640px) {
+  .hero-title-badge {
+    font-size: 1rem !important;
+    line-height: 1.5 !important; /* زيادة التباعد من 1.06 إلى 1.5 للقراءة المريحة */
+    white-space: normal !important;
+  }
+  /* Increase mobile badge paddings for better breathing room */
+  .hero-title-badge { 
+    padding: 12px 16px !important; 
+    border-radius: 14px !important; 
+  }
+}
+
+/* Fine-tune for small tablets */
+@media (min-width: 481px) and (max-width: 640px) {
+  .hero-subtitle {
+
+  /* Mobile: make hero buttons slightly taller and roomier without affecting layout/gap */
+  .hero-button {
+    height: 56px !important;
+    min-height: 56px !important;
+    max-height: 56px !important;
+    padding: 12px 20px !important; /* more inner space on sides */
+  }
+  /* Preserve spacing between two hero buttons while allowing inner growth */
+  .hero-btns-grid { column-gap: 2rem !important; }
+
+
+    margin-top: -8px !important;
+  }
+}
+
+
+
+
+
+/* ---- TrustMetrics animations ---- */
+@keyframes tm-pulse-soft {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+}
+
+
+/* removed typewriter per user revert */
+
+/* Soft transparent shadow around header icons */
+.icon-soft-shadow {
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.10), 0 2px 8px rgba(0, 0, 0, 0.06);
+  transition: box-shadow 200ms ease;
+}
+.icon-soft-shadow:hover {
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.14), 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+
+/* Slightly larger icon utility used in header */
+.icon-slightly-larger { width: 1.15rem !important; height: 1.15rem !important; }
+
+/* Ultra subtle outline around circular icon buttons */
+.icon-soft-shadow,
+.icon-soft-shadow:focus-visible {
+  outline: 1px solid rgba(0,0,0,0.06);
+  outline-offset: -1px;
+}
+
+/* Add faint glow on interactive circle buttons */
+.icon-soft-shadow:hover,
+.icon-soft-shadow:focus-visible {
+  box-shadow: 0 12px 28px rgba(0,0,0,0.14), 0 4px 12px rgba(0,0,0,0.08), 0 0 0 2px rgba(214,182,97,0.08);
+}
+
+
+/* Typewriter RTL hero title — removed on user request */
+
+/* Glass Morphism Effect - Clean Version */
+.glass-title-badge {
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(25px) saturate(180%);
+  -webkit-backdrop-filter: blur(25px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 
+    /* Glass depth shadow */
+    0 8px 32px 0 rgba(31, 38, 135, 0.15),
+    /* Inner glass highlight */
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.3),
+    inset 0 -1px 0 0 rgba(255, 255, 255, 0.1),
+    /* Top glass edge reflection */
+    0 1px 0 0 rgba(255, 255, 255, 0.2),
+    /* Glass thickness shadow */
+    0 20px 40px -12px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.320, 1);
+  /* Add subtle 3D thickness effect */
+  transform: perspective(1000px) rotateX(2deg);
+  transform-style: preserve-3d;
+}
+
+.glass-title-badge:hover {
+  background: rgba(255, 255, 255, 0.16);
+  transform: perspective(1000px) rotateX(2deg) translateY(-4px) scale(1.03);
+  box-shadow: 
+    /* Enhanced glass depth */
+    0 15px 45px 0 rgba(31, 38, 135, 0.25),
+    /* Brighter inner highlights */
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.4),
+    inset 0 -1px 0 0 rgba(255, 255, 255, 0.15),
+    /* Enhanced top reflection */
+    0 1px 0 0 rgba(255, 255, 255, 0.3),
+    /* Enhanced thickness shadow */
+    0 25px 50px -12px rgba(0, 0, 0, 0.15);
+}
+
+/* Enhanced text visibility */
+.glass-title-badge {
+  color: #ffffff !important;
+  text-shadow: 
+    /* White text glow for readability */
+    0 1px 3px rgba(255, 255, 255, 0.9),
+    0 2px 6px rgba(0, 0, 0, 0.3),
+    /* Bright thin neon glow effect for text only */
+    0 0 3px rgba(0, 255, 255, 0.9),
+    0 0 6px rgba(0, 255, 255, 0.7),
+    0 0 9px rgba(0, 255, 255, 0.5),
+    0 0 12px rgba(0, 255, 255, 0.35),
+    0 0 15px rgba(57, 255, 255, 0.25),
+    0 0 18px rgba(138, 43, 226, 0.2);
+  animation: text-neon-glow 3s ease-in-out infinite alternate;
+}
+
+@keyframes text-neon-glow {
+  0% {
+    text-shadow: 
+      0 1px 3px rgba(255, 255, 255, 0.9),
+      0 2px 6px rgba(0, 0, 0, 0.3),
+      0 0 3px rgba(0, 255, 255, 0.9),
+      0 0 6px rgba(0, 255, 255, 0.7),
+      0 0 9px rgba(0, 255, 255, 0.5),
+      0 0 12px rgba(0, 255, 255, 0.35),
+      0 0 15px rgba(57, 255, 255, 0.25),
+      0 0 18px rgba(138, 43, 226, 0.2);
+  }
+  100% {
+    text-shadow: 
+      0 1px 3px rgba(255, 255, 255, 0.9),
+      0 2px 6px rgba(0, 0, 0, 0.3),
+      0 0 4px rgba(0, 255, 255, 1),
+      0 0 8px rgba(0, 255, 255, 0.85),
+      0 0 12px rgba(0, 255, 255, 0.65),
+      0 0 16px rgba(0, 255, 255, 0.45),
+      0 0 20px rgba(57, 255, 255, 0.35),
+      0 0 24px rgba(138, 43, 226, 0.25);
+  }
+}
+
+.tm-pulse-soft { animation: tm-pulse-soft 2.6s ease-in-out infinite; }
