@@ -193,7 +193,7 @@ const HomePage = () => {
  {/* مساحة بيضاء فارغة للجوال فقط - تم تقليلها بسبب العنوان الأكبر */}
 
  <div className="block sm:hidden h-6"></div>
- <p className="hero-subtitle text-7xl md:text-6xl lg:text-5xl sm:text-[clamp(3.2rem,9.6vw,3.8rem)] text-gray-700 mb-0 sm:mb-8 leading-tight sm:leading-[clamp(4.1rem,10.9vw,4.9rem)] font-semibold">
+ <p className="hero-subtitle text-4xl sm:text-2xl lg:text-3xl text-gray-700 mb-0 sm:mb-8 leading-tight font-semibold">
  نضع بين يديك تجربة مالية مبتكرة ومصممة لتلبية معاملاتك اليومية بأعلى درجات الكفاءة وترتقي بأسلوبك المالي الرقمي إلى مستوى جديد من الراحة والثقة.
  </p>
  {/* زر ابدأ مشروعك الآن فقط في الجوال - تم نقله للأسفل */}
