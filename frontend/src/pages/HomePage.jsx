@@ -163,7 +163,7 @@ const HomePage = () => {
  {/* Text Content - Right Side */}
  <div className="col-span-1 origin-right sm:scale-[0.42]">
  <div className="text-center">
-   <div className="inline-block w-full sm:w-auto glass-title-badge text-[#0A2540] px-7 py-12 sm:py-3.5 rounded-2xl sm:rounded-xl text-[2rem] sm:text-[2rem] font-black tracking-tight sm:leading-tight mb-1 sm:mb-6 inline-badge hero-title-badge font-ghayaty transform-none min-h-[110px] sm:min-h-0 mt-3 sm:mt-0"
+   <div className="inline-block w-full sm:w-auto glass-title-badge text-[#0A2540] px-7 py-16 sm:py-3.5 rounded-2xl sm:rounded-xl text-[2rem] sm:text-[2rem] font-black tracking-tight sm:leading-tight mb-1 sm:mb-6 inline-badge hero-title-badge font-ghayaty transform-none min-h-[130px] sm:min-h-0 mt-3 sm:mt-0"
         style={{
           width: '100%',
           height: 'auto',
